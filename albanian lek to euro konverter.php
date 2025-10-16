@@ -31,21 +31,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['lek_amount'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Albanian Lek to Euro Converter</title>
-</head>
-<body>
-    <h2>Albanian Lek to Euro Converter</h2>
-    <form method="post" action="">
-        <label for="lek_amount">Enter amount in Albanian Lek (ALL):</label>
-        <input type="text" id="lek_amount" name="lek_amount" required>
-        <input type="submit" value="Convert">
-    </form>
-    <?php if ($result): ?>
-        <p><?php echo htmlspecialchars($result); ?></p>
-    <?php endif; ?>
-</body>
-</html>
