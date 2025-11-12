@@ -1,0 +1,32 @@
+<?php
+// Ushtrimi 2: Kthe stringun e përmbysur (strrev)
+
+/**
+ * Funksion që siguron kthimin e saktë të stringut mbrapsht,
+ * duke mbështetur karakteret multibyte si 'ë'.
+ */
+function ktheStringunMbrapsht($stringu_origjinal) {
+    if (function_exists('mb_strrev')) {
+        // Përdor funksionin standard mb_strrev nëse është i disponueshëm
+        return mb_strrev($stringu_origjinal);
+    } else {
+        // Zgjidhja alternative për mbështetjen e UTF-8
+        return implode('', array_reverse(preg_split('//u', $stringu_origjinal, -1, PREG_SPLIT_NO_EMPTY)));
+    }
+}
+
+$stringu_a = "Përshëndetje";
+$stringu_b = "meri ngarështe";
+
+$rezultati_a = ktheStringunMbrapsht($stringu_a);
+$rezultati_b = ktheStringunMbrapsht($stringu_b);
+
+echo "### 2. Kthimi i Stringjeve Mbrapsht\n";
+echo "---------------------------------\n";
+
+echo "Stringu 1 origjinal: **$stringu_a**\n";
+echo "Stringu 1 i kthyer: **$rezultati_a**\n\n";
+
+echo "Stringu 2 origjinal: **$stringu_b**\n";
+echo "Stringu 2 i kthyer: **$rezultati_b**\n";
+?>
