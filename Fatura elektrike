@@ -1,0 +1,34 @@
+<?php
+// Ushtrimi 4: Analiza e Fakturës Elektrike
+
+// 1. Vëzhgimi (Të Dhënat e Matur/Faturës)
+$voltazhi = 230;     // Voltazhi standard (V)
+$rryma = 4;          // Ampera (I) e konsumuar mesatarisht nga një pajisje
+
+// 2. Koeficienti (Faktori i llogaritjes)
+// Koeficienti i Voltazhit (supozojmë Koha në Orë e përdorimit)
+$koeficienti_koha_ore = 100; // 100 orë pune për periudhën e faturës
+
+// 3. Llogaritja e Rezultatit (Fuqia dhe Energjia)
+
+// Llogaritja e Fuqisë (P = V * I) - Fuqia matet në Watt (W)
+$fuqia = $voltazhi * $rryma; // P = 230 * 4 = 920 W
+
+// Llogaritja e Energjisë (E = P * t) - Energjia matet në Watt-orë (Wh)
+$rezultati_energjia = $fuqia * $koeficienti_koha_ore;
+
+echo "### ⚡ Faktura Elektrike (Kalkulimi në PHP)\n";
+echo "----------------------------------------\n";
+
+echo "1. **Vëzhgimi (Voltazhi/Rryma):**\n";
+echo "   - Voltazhi (V): **{$voltazhi} V**\n";
+echo "   - Rryma (I): {$rryma} A\n";
+
+echo "2. **Koeficienti i Voltazhit (Koha):**\n";
+echo "   - Koeficienti (Koha e Përdorimit t): **{$koeficienti_koha_ore} orë**\n";
+
+echo "3. **Rezultati (Energjia e Konsumuar):**\n";
+echo "   - Fuqia e Pajisjes (P = V * I): {$fuqia} W\n";
+echo "   - Energjia Totale (E = P * t): **{$rezultati_energjia} Wh**\n";
+echo "\n*Kjo përfaqëson konsumin e Energjisë në Watt-orë (Wh) për periudhën.*";
+?>
