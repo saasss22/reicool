@@ -1,0 +1,25 @@
+<?php
+// Ushtrimi 3: Shfaq hapat e një eksperimenti shkencor
+
+$hapat_shkencor = [
+    1 => "Vëzhgimi",
+    2 => "Pyetja",
+    3 => "Hipoteza",
+    4 => "Eksperimenti",
+    5 => "Analiza të dhënash",
+    6 => "Përfundimi",
+    7 => "Ripare (Shqyrtimi/Komunikimi)",
+    8 => "Repetimi (Përsëritja)"
+];
+
+echo "### 🔬 Hapat e një Eksperimenti Shkencor:\n";
+echo "----------------------------------------\n";
+
+// Përdorimi i një cikli foreach për të shfaqur çdo hap
+foreach ($hapat_shkencor as $numri_hapi => $emri_hapi) {
+    echo $numri_hapi . ". **" . $emri_hapi . "**\n";
+}
+
+// Shembull i thirrjes së një hapi specifik
+echo "\n* Hapi më kritik për testimin është: " . $hapat_shkencor[4];
+?>
