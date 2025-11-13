@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL/EUR</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex justify-center items-center min-h-screen bg-gray-100 p-4">
+
+    <div class="w-full max-w-[200px] bg-white shadow-xl rounded-lg p-3 space-y-3">
+        <h1 class="text-base font-bold text-center text-blue-600">ALL ⇄ EUR</h1>
+        
+        <!-- ALL Input -->
+        <input type="number" id="a" value="100" min="0" title="Albanian Lek (ALL) Amount" placeholder="ALL"
+               oninput="const r=0.010348; document.getElementById('e').value=(parseFloat(this.value)||0)*r;"
+               class="w-full rounded-md border p-2 text-sm focus:ring-blue-500">
+        
+        <!-- EUR Output -->
+        <input type="text" id="e" readonly value="1.03" title="Euro (EUR) Result" placeholder="EUR"
+               class="w-full rounded-md border p-2 text-sm font-bold bg-gray-50 cursor-default text-gray-800">
+
+        <p class="text-[10px] text-gray-400 text-center">Rate: 1 ALL = 0.010348 EUR</p>
+    </div>
+</body>
+</html>
